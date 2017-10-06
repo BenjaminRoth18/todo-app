@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 
-import { Todo } from '../todo.model';
-import { TodoService } from '../todo.service';
+import { Todo } from '../../todo.model';
+import { TodoService } from '../../todo.service';
 
 @Component({
   selector: 'app-add-todo',
@@ -11,7 +11,6 @@ import { TodoService } from '../todo.service';
 export class AddTodoComponent implements OnInit {
   todos: Todo[];
   buttonState = true;
-  data = 'Data'
 
   constructor(private todoService: TodoService) {}
 
@@ -21,12 +20,11 @@ export class AddTodoComponent implements OnInit {
 
   changeInput(input) {
     if (input !== '') {
-      console.log('accepted');
       this.buttonState = false;
     }
   }
 
-  onAddTo(addTodoItem) {
+  onAddTodo(addTodoItem) {
     const todoName = addTodoItem.value;
     const newTodo = new Todo(todoName, 'done');
 

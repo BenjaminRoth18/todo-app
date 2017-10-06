@@ -1,7 +1,16 @@
+import { EventEmitter } from '@angular/core';
+
 import { Todo } from './todo.model';
 
 export class TodoService {
-  todos: Todo[] = [];
+  todos: Todo[] = [
+    {
+      name: 'Äpfel',
+      status: 'done'
+    }
+  ];
+
+  todoSelected = new EventEmitter<Todo>();
 
   getTodos() {
     return this.todos;
