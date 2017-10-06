@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo.model';
 import { TodoService } from '../todo.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-list-todos',
@@ -16,9 +17,5 @@ export class ListTodosComponent implements OnInit {
 
   removeItem(todoItem) {
     this.todoService.removeItem(todoItem);
-  }
-
-  addFilter() {
-    this.todoService.addFilter();
   }
 }

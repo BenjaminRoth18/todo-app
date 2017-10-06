@@ -1,5 +1,3 @@
-import { EventEmitter } from '@angular/core';
-
 import { Todo } from './todo.model';
 
 export class TodoService {
@@ -7,10 +5,6 @@ export class TodoService {
 
   getTodos() {
     return this.todos;
-  }
-
-  addFilter() {
-    this.todos = this.todos.filter(item => item.name.startsWith('M'));
   }
 
   removeItem(todoItem) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { TodoService } from './todo.service';
 
@@ -11,4 +11,3 @@ import { TodoService } from './todo.service';
 export class AppComponent {
 
 }
-

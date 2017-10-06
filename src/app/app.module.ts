@@ -1,27 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { ListTodosComponent } from './list-todos/list-todos.component';
-import { ListHighlightDirective } from './directives/list-highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AddTodoComponent,
-    ListTodosComponent,
-    ListHighlightDirective
+    ListTodosComponent
   ],
   imports: [
     BrowserModule,
-    BsDropdownModule.forRoot()
+    FormsModule
   ],
-  exports: [BsDropdownModule],
   providers: [],
   bootstrap: [AppComponent]
 })

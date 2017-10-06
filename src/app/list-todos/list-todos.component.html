@@ -1,19 +1,9 @@
 <div class="container">
   <div class="row">
-    <hr>
-    <div class="col">
+    <div class="col col-md-5">
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let todoEl of todos"><a href="#">{{todoEl.name}}</a> <a href="#" class="pull-right" (click)="removeItem(todoEl);">Remove</a></li>
+        <li class="list-group-item" *ngFor="let todoEl of todos"><a href="#">{{todoEl.name}}</a> <a href="#" class="float-right" (click)="removeItem(todoEl);">Remove</a></li>
       </ul>
-      <p *ngIf="todos.length !== 0">
-        {{ todos.length }}
-      </p>
     </div>
-
-    <p>
-      <a href="#" (click)="addFilter()">
-        All
-      </a>
-    </p>
   </div>
 </div>

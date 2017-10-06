@@ -1,9 +1,16 @@
-<h3>
+<h3 class="mb-3">
   What do you have to do?
 </h3>
 
-<div class="form-group">
-  <input type="text" class="form-control" id="add-to-do" placeholder="Add your To-Do" #addTodoItem>
+<div class="input-group input-group-lg mb-3">
+  <input type="text" class="form-control" id="add-to-do" placeholder="Add your To-Do" (input)="changeInput($event)" (keyup.enter)="onAddTo(addTodoItem)" #addTodoItem>
 </div>
 
-<button type="button" class="btn btn-primary" (click)="onAddTo(addTodoItem)">Add To-Do</button>
+<div>
+  <button type="button" class="btn" (click)="onAddTo(addTodoItem)" [disabled]="buttonState">Add To-Do</button>
+  <p *ngIf="todos.length !== 0" class="float-right">
+    <span class="badge badge-secondary ">{{ todos.length }}</span>
+  </p>
+</div>
+
+
