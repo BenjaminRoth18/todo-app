@@ -20,7 +20,7 @@ export class TodoItemComponent implements OnInit {
   }
 
   selectTodo() {
-    this.todoService.todoSelected.emit(this.todo);
+    this.todoService.todoSelected.next(this.todo);
   }
 
   removeItem(todoItem) {

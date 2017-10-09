@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AddTodoComponent } from './todos/add-todo/add-todo.component';
 import { ListTodosComponent } from './todos/list-todos/list-todos.component';
-import { DetailComponent } from './todos/detail/detail.component';
 import { TodoItemComponent } from './todos/list-todos/todo-item/todo-item.component';
 import { TodosComponent } from './todos/todos.component';
 
@@ -16,7 +15,6 @@ import { TodosComponent } from './todos/todos.component';
     HeaderComponent,
     AddTodoComponent,
     ListTodosComponent,
-    DetailComponent,
     TodoItemComponent,
     TodosComponent
   ],

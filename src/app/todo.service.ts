@@ -1,6 +1,5 @@
-import { EventEmitter } from '@angular/core';
-
 import { Todo } from './todo.model';
+import { Subject } from 'rxjs/Subject';
 
 export class TodoService {
   todos: Todo[] = [
@@ -10,7 +9,7 @@ export class TodoService {
     }
   ];
 
-  todoSelected = new EventEmitter<Todo>();
+  todoSelected = new Subject<Todo>();
 
   getTodos() {
     return this.todos;
