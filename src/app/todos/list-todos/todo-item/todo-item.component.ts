@@ -12,7 +12,7 @@ export class TodoItemComponent implements OnInit {
   todos: Todo[];
 
   @Input() todo: Todo;
-  @Output() todoDetail = new EventEmitter<Todo>();
+  @Output() myOutput = new EventEmitter();
 
   constructor(private todoService: TodoService) { }
   ngOnInit() {
@@ -25,5 +25,9 @@ export class TodoItemComponent implements OnInit {
 
   removeItem(todoItem) {
     this.todoService.removeItem(todoItem);
+  }
+
+  onSetStatus(status) {
+    this.todoService.setStatus(status.checked, this.todo);
   }
 }

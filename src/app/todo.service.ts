@@ -5,7 +5,7 @@ export class TodoService {
   todos: Todo[] = [
     {
       name: 'Äpfel',
-      status: 'done'
+      status: ''
     }
   ];
 
@@ -22,5 +22,10 @@ export class TodoService {
 
   addTodo(todo: Todo) {
     this.todos.push(todo);
+  }
+
+  setStatus(newStatus, item) {
+    const foundTodo = this.todos.find(todo => todo === item);
+    foundTodo.status = newStatus ? 'completed' : 'open';
   }
 }

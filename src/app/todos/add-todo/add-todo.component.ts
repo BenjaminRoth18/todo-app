@@ -26,7 +26,7 @@ export class AddTodoComponent implements OnInit {
 
   onAddTodo(addTodoItem) {
     const todoName = addTodoItem.value;
-    const newTodo = new Todo(todoName, 'done');
+    const newTodo = new Todo(todoName, '');
 
     if (todoName) {
       this.todoService.addTodo(newTodo);

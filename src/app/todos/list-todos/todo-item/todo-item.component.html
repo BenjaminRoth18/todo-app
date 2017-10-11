@@ -1,7 +1,11 @@
-<label class="form-check-label">
-  <input class="form-check-input" type="checkbox">
-</label>
+<div class="item">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" (click)="onSetStatus(todostatus)" #todostatus>
+  </label>
 
-<a href="#" (click)="selectTodo(todo)">{{todo.name}}</a>
+  <a href="#" (click)="selectTodo(todo)">{{todo.name}}</a>
 
-<a href="#" class="float-right" (click)="removeItem(todo);">Remove</a>
+  <span>{{ todo.status }}</span>
+
+  <a href="#" class="float-right" (click)="removeItem(todo);">Remove</a>
+</div>

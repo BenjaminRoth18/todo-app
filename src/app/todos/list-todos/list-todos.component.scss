@@ -1,0 +1,10 @@
+.completed {
+  a {
+    opacity: 0.5;
+    pointer-events: none;
+
+    &:first-of-type {
+      text-decoration: line-through;
+    }
+  }
+}

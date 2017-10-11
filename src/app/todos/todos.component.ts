@@ -10,8 +10,6 @@ import { TodoService } from '../todo.service';
   providers: [TodoService]
 })
 export class TodosComponent implements OnInit {
-  selectedTodo: Todo;
-
   constructor(private todoService: TodoService) { }
 
   ngOnInit() {}
