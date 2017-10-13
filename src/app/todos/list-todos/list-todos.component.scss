@@ -8,3 +8,21 @@
     }
   }
 }
+
+.filter {
+  a {
+    color: #b2b2b2;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 12px;
+
+    &.active {
+      color: #666;
+    }
+
+    &:hover {
+      color: #888;
+      text-decoration: none;
+    }
+  }
+}

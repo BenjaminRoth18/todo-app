@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input } from '@angular/core';
 
 import {Todo} from '../../../todo.model';
 import {TodoService} from '../../../todo.service';
@@ -11,7 +11,6 @@ import {TodoType} from '../../../todo.type';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
-  @Output() myOutput = new EventEmitter();
 
   getStatusCssClass(status: TodoType): string {
     if (status === TodoType.INCOMPLETE) {

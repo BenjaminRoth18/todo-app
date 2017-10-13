@@ -12,6 +12,7 @@ import {TodoType} from '../../todo.type';
 })
 export class ListTodosComponent implements OnInit {
   todos: Todo[];
+  activeFilterClass = '';
 
   constructor(private todoService: TodoService) {
   }
@@ -27,8 +28,18 @@ export class ListTodosComponent implements OnInit {
       );
   }
 
-  isFilterActive(filterName: string) {
-    // if (filterName === 'all' && )
+  isFilterActive(filterType: string) {
+    if (filterType === 'complete' && this.todoService.filterType === TodoType.COMPLETE) {
+      return this.activeFilterClass = 'active';
+    }
+
+    if (filterType === 'incomplete' && this.todoService.filterType === TodoType.INCOMPLETE) {
+      return this.activeFilterClass = 'active';
+    }
+
+    if (filterType === 'all' && this.todoService.filterType === null) {
+      return this.activeFilterClass = 'active';
+    }
   }
 
   onSetFilter(filterType: string) {
