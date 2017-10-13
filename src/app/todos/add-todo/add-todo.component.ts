@@ -2,6 +2,7 @@ import {Component, OnInit } from '@angular/core';
 
 import { Todo } from '../../todo.model';
 import { TodoService } from '../../todo.service';
+import {TodoType} from '../../todo.type';
 
 @Component({
   selector: 'app-add-todo',
@@ -26,7 +27,7 @@ export class AddTodoComponent implements OnInit {
 
   onAddTodo(addTodoItem) {
     const todoName = addTodoItem.value;
-    const newTodo = new Todo(todoName, '');
+    const newTodo = new Todo(todoName, TodoType.INCOMPLETE);
 
     if (todoName) {
       this.todoService.addTodo(newTodo);

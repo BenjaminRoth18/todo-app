@@ -1,1 +1,7 @@
 <app-todo-item class="list-group-item" *ngFor="let todoEl of todos" [todo]="todoEl"></app-todo-item>
+
+<div class="btn-group justify-content-center mt-4">
+  <button type="button" [ngClass]="isFilterActive('all')" class="btn btn-link text-secondary" (click)="onSetFilter('all')">All</button>
+  <button type="button" [ngClass]="isFilterActive('incomplete')" class="btn btn-link text-secondary" (click)="onSetFilter('incomplete')">Incomplete</button>
+  <button type="button" [ngClass]="isFilterActive('complete')" class="btn btn-link text-secondary" (click)="onSetFilter('complete')">Completed</button>
+</div>
