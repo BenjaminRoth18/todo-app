@@ -1,13 +1,11 @@
-import { Todo } from './todo.model';
-import { Subject } from 'rxjs/Subject';
+import {Todo} from './todo.model';
+import {Subject} from 'rxjs/Subject';
 import {TodoType} from './todo.type';
 
 export class TodoService {
   todos: Todo[] = [];
 
-  todoSelected = new Subject<Todo>();
   filter = new Subject<Todo[]>();
-
   filterType: TodoType = null;
 
   getTodos() {

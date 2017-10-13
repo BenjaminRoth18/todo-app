@@ -1,4 +1,4 @@
-<div [ngClass]="getStatusCssClass(todo.status)">
+<div [ngClass]="getStatusCssClass(todo.status)" class="item">
   <label class="form-check-label">
     <input class="form-check-input"
            type="checkbox"
@@ -7,7 +7,11 @@
            #todostatus>
   </label>
 
-  <a href="#" class="" (click)="selectTodo(todo)">{{todo.name}}</a>
+  <div class="column-right">
+    <span (dblclick)="onChangeName(todo)">{{todo.name}}</span>
 
-  <a href="#" class="float-right" (click)="removeItem(todo);">Remove</a>
+    <input type="text" class="form-control edit-value" [value]="todo.name" (blur)="editingFinished(todo, editedtodo.value)" *ngIf="editTodo" #editedtodo>
+
+    <a href="#" class="float-right" (click)="removeItem(todo);">Remove</a>
+  </div>
 </div>

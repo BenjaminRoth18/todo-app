@@ -1,1 +1,27 @@
+.item {
+  display: flex;
+
+  div.column-right {
+    position: relative;
+    width: 100%;
+
+    span {
+      display: inline-block;
+      min-height: 12px;
+      min-width: 50px;
+    }
+
+    .edit-value {
+      border: 0 none;
+      border-bottom: solid 1px #bbb;
+      border-radius: 0;
+      height: 100%;
+      padding-left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+
 

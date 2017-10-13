@@ -11,6 +11,7 @@ import {TodoType} from '../../../todo.type';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
+  editTodo = false;
 
   getStatusCssClass(status: TodoType): string {
     if (status === TodoType.INCOMPLETE) {
@@ -37,15 +38,20 @@ export class TodoItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectTodo() {
-    this.todoService.todoSelected.next(this.todo);
-  }
-
   removeItem(todoItem) {
     this.todoService.removeItem(todoItem);
   }
 
   onSetStatus(status: any) {
     this.todoService.setStatus(status.checked, this.todo);
+  }
+
+  onChangeName() {
+    this.editTodo = true;
+  }
+
+  editingFinished(todo, editedtodo) {
+    todo.name = editedtodo;
+    this.editTodo = false;
   }
 }
