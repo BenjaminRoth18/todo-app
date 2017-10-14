@@ -1,7 +1,7 @@
 <div class="container mb-3">
   <div class="row justify-content-center">
     <div class="col">
-      <app-add-todo></app-add-todo>
+      <app-add-todo (footerState)="setFooterState($event)"></app-add-todo>
     </div>
     <hr />
   </div>
@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <app-list-todos class="list-group"></app-list-todos>
+      <app-list-todos class="list-group" [footerState]="footerState"></app-list-todos>
     </div>
   </div>
 </div>

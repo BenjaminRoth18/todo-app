@@ -13,6 +13,7 @@ export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
   editTodo = false;
 
+
   getStatusCssClass(status: TodoType): string {
     if (status === TodoType.INCOMPLETE) {
       return 'incomplete';
@@ -38,7 +39,7 @@ export class TodoItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  removeItem(todoItem) {
+  removeItem(todoItem: Todo) {
     this.todoService.removeItem(todoItem);
   }
 

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Todo } from '../todo.model';
 import { TodoService } from '../todo.service';
 
 @Component({
@@ -11,6 +9,11 @@ import { TodoService } from '../todo.service';
 })
 export class TodosComponent implements OnInit {
   constructor(private todoService: TodoService) { }
+  footerState = false;
 
   ngOnInit() {}
+
+  setFooterState(state) {
+    this.footerState = state;
+  }
 }

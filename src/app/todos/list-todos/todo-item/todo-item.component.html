@@ -12,6 +12,6 @@
 
     <input type="text" class="form-control edit-value" [value]="todo.name" (blur)="editingFinished(todo, editedtodo.value)" *ngIf="editTodo" #editedtodo>
 
-    <a href="#" class="float-right" (click)="removeItem(todo);">Remove</a>
+    <a href="#" class="float-right text-secondary" (click)="removeItem(todo);">Remove</a>
   </div>
 </div>

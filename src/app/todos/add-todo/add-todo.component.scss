@@ -2,6 +2,12 @@ h3 {
   position: relative;
 }
 
+input.add-todo {
+  &:focus {
+    border: solid 1px #c2c2c2;
+  }
+}
+
 p.counter {
   color: #888;
   position: relative;

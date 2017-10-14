@@ -1,4 +1,4 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { Todo } from '../../todo.model';
 import { TodoService } from '../../todo.service';
@@ -12,6 +12,7 @@ import {TodoType} from '../../todo.type';
 export class AddTodoComponent implements OnInit {
   todos: Todo[];
   buttonState = true;
+  @Output() footerState = new EventEmitter<boolean>();
 
   constructor(private todoService: TodoService) {}
 
@@ -32,5 +33,7 @@ export class AddTodoComponent implements OnInit {
     if (todoName) {
       this.todoService.addTodo(newTodo);
     }
+
+    this.footerState.emit(true);
   }
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 import {Todo} from '../../todo.model';
 import {TodoService} from '../../todo.service';
@@ -13,6 +13,7 @@ import {TodoType} from '../../todo.type';
 export class ListTodosComponent implements OnInit {
   todos: Todo[];
   activeFilterClass = '';
+  @Input() footerState: boolean;
 
   constructor(private todoService: TodoService) {
   }
