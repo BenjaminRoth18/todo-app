@@ -3,14 +3,10 @@ import {Subject} from 'rxjs/Subject';
 import {TodoType} from './todo.type';
 
 export class TodoService {
-  todos: Todo[] = [];
+  todos: Todo[] = JSON.parse(localStorage.getItem('todos') || '[]');
 
   filter = new Subject<Todo[]>();
   filterType: TodoType = null;
-
-  getTodos() {
-    return this.todos;
-  }
 
   removeItem(todoItem) {
     const element = this.todos.indexOf(todoItem);
@@ -20,6 +16,7 @@ export class TodoService {
 
   addTodo(todo: Todo) {
     this.todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(this.todos));
     this.applyFilter();
   }
 

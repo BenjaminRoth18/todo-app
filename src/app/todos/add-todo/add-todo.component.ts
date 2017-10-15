@@ -17,7 +17,7 @@ export class AddTodoComponent implements OnInit {
   constructor(private todoService: TodoService) {}
 
   ngOnInit() {
-    this.todos = this.todoService.getTodos();
+    this.todos = this.todoService.todos;
   }
 
   changeInput(input) {

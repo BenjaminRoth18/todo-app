@@ -51,8 +51,8 @@ export class TodoItemComponent implements OnInit {
     this.editTodo = true;
   }
 
-  editingFinished(todo, editedtodo) {
-    todo.name = editedtodo;
+  editingFinished(todo, editedTodo) {
+    todo.name = editedTodo;
     this.editTodo = false;
   }
 }

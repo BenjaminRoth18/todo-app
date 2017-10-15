@@ -19,7 +19,7 @@ export class ListTodosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.todos = this.todoService.getTodos();
+    this.todos = this.todoService.todos;
 
     this.todoService.filter
       .subscribe(
