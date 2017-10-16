@@ -10,7 +10,7 @@
   <div class="column-right">
     <span (dblclick)="onChangeName(todo)">{{todo.name}}</span>
 
-    <input type="text" class="form-control edit-value" [value]="todo.name" (blur)="editingFinished(todo, editedtodo.value)" *ngIf="editTodo" #editedtodo>
+    <input type="text" class="form-control edit-value" [value]="todo.name" (blur)="editingFinished(todo, editedtodo.value)" (keyup.enter)="editingFinished(todo, editedtodo.value)" *ngIf="editTodo" #editedtodo>
 
     <a href="#" class="float-right text-secondary" (click)="removeItem(todo);">Remove</a>
   </div>

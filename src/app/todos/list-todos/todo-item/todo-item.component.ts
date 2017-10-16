@@ -36,8 +36,7 @@ export class TodoItemComponent implements OnInit {
   constructor(private todoService: TodoService) {
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   removeItem(todoItem: Todo) {
     this.todoService.removeItem(todoItem);
@@ -52,7 +51,7 @@ export class TodoItemComponent implements OnInit {
   }
 
   editingFinished(todo, editedTodo) {
-    todo.name = editedTodo;
+    this.todoService.changedName(todo, editedTodo);
     this.editTodo = false;
   }
 }

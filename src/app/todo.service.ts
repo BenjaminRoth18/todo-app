@@ -36,4 +36,12 @@ export class TodoService {
     const filterResults = this.todos.filter(todo => this.filterType === null || todo.status === this.filterType);
     this.filter.next(filterResults);
   }
+
+  changedName(todo, editedTodo) {
+    const changedTodoName = editedTodo;
+    const findRenamedTodoIndex = this.todos.indexOf(todo);
+    const findRenamedTodo = this.todos[findRenamedTodoIndex];
+    findRenamedTodo.name = changedTodoName;
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
 }
