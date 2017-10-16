@@ -11,13 +11,13 @@ export class TodoService {
   removeItem(todoItem) {
     const element = this.todos.indexOf(todoItem);
     this.todos.splice(element, 1);
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.setLocalStorage();
     this.applyFilter();
   }
 
   addTodo(todo: Todo) {
     this.todos.push(todo);
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.setLocalStorage();
     this.applyFilter();
   }
 
@@ -42,6 +42,10 @@ export class TodoService {
     const findRenamedTodoIndex = this.todos.indexOf(todo);
     const findRenamedTodo = this.todos[findRenamedTodoIndex];
     findRenamedTodo.name = changedTodoName;
+    this.setLocalStorage();
+  }
+
+  setLocalStorage() {
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 }
