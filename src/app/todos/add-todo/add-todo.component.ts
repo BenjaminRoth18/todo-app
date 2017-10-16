@@ -12,7 +12,6 @@ import {TodoType} from '../../todo.type';
 export class AddTodoComponent implements OnInit {
   todos: Todo[];
   buttonState = true;
-  @Output() footerState = new EventEmitter<boolean>();
 
   constructor(private todoService: TodoService) {}
 
@@ -33,7 +32,5 @@ export class AddTodoComponent implements OnInit {
     if (todoName) {
       this.todoService.addTodo(newTodo);
     }
-
-    this.footerState.emit(true);
   }
 }

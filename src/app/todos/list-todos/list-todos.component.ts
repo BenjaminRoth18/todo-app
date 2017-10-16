@@ -13,7 +13,6 @@ import {TodoType} from '../../todo.type';
 export class ListTodosComponent implements OnInit {
   todos: Todo[];
   activeFilterClass = '';
-  @Input() footerState: boolean;
 
   constructor(private todoService: TodoService) {
   }
