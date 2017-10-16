@@ -11,6 +11,7 @@ export class TodoService {
   removeItem(todoItem) {
     const element = this.todos.indexOf(todoItem);
     this.todos.splice(element, 1);
+    localStorage.setItem('todos', JSON.stringify(this.todos));
     this.applyFilter();
   }
 
