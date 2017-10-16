@@ -50,7 +50,7 @@ export class TodoItemComponent implements OnInit {
     this.editTodo = true;
   }
 
-  editingFinished(todo, editedTodo) {
+  editingFinished(todo: Todo, editedTodo: string) {
     this.todoService.changedName(todo, editedTodo);
     this.editTodo = false;
   }
