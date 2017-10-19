@@ -1,8 +1,8 @@
-import {Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import {Todo} from '../../todo.model';
-import {TodoService} from '../../todo.service';
-import {TodoType} from '../../todo.type';
+import { Todo } from '../../todo.model';
+import { TodoService } from '../../todo.service';
+import { TodoType } from '../../todo.type';
 
 @Component({
   selector: 'app-list-todos',
@@ -13,6 +13,7 @@ import {TodoType} from '../../todo.type';
 export class ListTodosComponent implements OnInit {
   todos: Todo[];
   activeFilterClass = '';
+  footerState = false;
 
   constructor(private todoService: TodoService) {
   }
@@ -20,10 +21,21 @@ export class ListTodosComponent implements OnInit {
   ngOnInit() {
     this.todos = this.todoService.todos;
 
+    if (this.todos.length > 0) {
+      this.footerState = true;
+    }
+
     this.todoService.filter
       .subscribe(
         (todo: Todo[]) => {
           this.todos = todo;
+        }
+      );
+
+    this.todoService.footerState
+      .subscribe(
+        (status: boolean) => {
+          this.footerState = status;
         }
       );
   }

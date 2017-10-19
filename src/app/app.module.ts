@@ -8,6 +8,10 @@ import { AddTodoComponent } from './todos/add-todo/add-todo.component';
 import { ListTodosComponent } from './todos/list-todos/list-todos.component';
 import { TodoItemComponent } from './todos/list-todos/todo-item/todo-item.component';
 import { TodosComponent } from './todos/todos.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+
+import { ToggleAddDirective } from './directives/toggle-add.directive';
+import { ToggleRemoveDirective } from './directives/toggle-remove.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,10 @@ import { TodosComponent } from './todos/todos.component';
     AddTodoComponent,
     ListTodosComponent,
     TodoItemComponent,
-    TodosComponent
+    TodosComponent,
+    SidebarComponent,
+    ToggleAddDirective,
+    ToggleRemoveDirective
   ],
   imports: [
     BrowserModule,

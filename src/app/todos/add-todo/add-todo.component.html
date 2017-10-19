@@ -8,9 +8,9 @@
 </p>
 
 <div class="input-group input-group-lg mb-4">
-  <input type="text" class="form-control add-todo" placeholder="" (input)="changeInput($event)" (keyup.enter)="onAddTodo(addTodoItem)" #addTodoItem>
+  <input type="text" class="form-control add-todo" placeholder="" (input)="changeInput($event)" (keyup.enter)="onAddTodo(addTodoName)" #addTodoName>
   <span class="input-group-btn">
-    <button class="btn btn-secondary" type="button" (click)="onAddTodo(addTodoItem)" [disabled]="buttonState">Add To-Do</button>
+    <button class="btn btn-secondary" type="button" (click)="onAddTodo(addTodoName)" [disabled]="buttonDisabled">Add Todo</button>
   </span>
 </div>
 

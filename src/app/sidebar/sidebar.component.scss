@@ -1,0 +1,29 @@
+aside#aside-main {
+  background: #eaeaea;
+  height: 100%;
+  max-width: 600px;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  header {
+    .td-close {
+      cursor: pointer;
+      font-size: 30px;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+
+}
+
+body.active-add-todo {
+  aside#aside-main {
+    right: 0;
+  }
+}

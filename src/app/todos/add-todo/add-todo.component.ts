@@ -1,4 +1,4 @@
-import {Component, OnInit, EventEmitter, Output } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import { Todo } from '../../todo.model';
 import { TodoService } from '../../todo.service';
@@ -11,7 +11,8 @@ import {TodoType} from '../../todo.type';
 })
 export class AddTodoComponent implements OnInit {
   todos: Todo[];
-  buttonState = true;
+  buttonDisabled = true;
+  input: string;
 
   constructor(private todoService: TodoService) {}
 
@@ -20,14 +21,16 @@ export class AddTodoComponent implements OnInit {
   }
 
   changeInput(input) {
-    if (input !== '') {
-      this.buttonState = false;
+    if (input.target.value !== '') {
+      this.buttonDisabled = false;
+    } else {
+      this.buttonDisabled = true;
     }
   }
 
-  onAddTodo(addTodoItem) {
-    const todoName = addTodoItem.value;
-    const newTodo = new Todo(todoName, TodoType.INCOMPLETE);
+  onAddTodo(addTodoName) {
+    const todoName = addTodoName.value;
+    const newTodo = new Todo(todoName, '', '', TodoType.INCOMPLETE);
 
     if (todoName) {
       this.todoService.addTodo(newTodo);

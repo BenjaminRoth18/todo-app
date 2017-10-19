@@ -1,6 +1,6 @@
 <app-todo-item class="list-group-item" *ngFor="let todoEl of todos" [todo]="todoEl"></app-todo-item>
 
-<footer class="filter btn-group justify-content-center mt-4">
+<footer class="filter btn-group justify-content-center mt-4" *ngIf="footerState">
   <a href="#" [ngClass]="isFilterActive('all')" (click)="onSetFilter('all')">All</a>
   <a href="#" [ngClass]="isFilterActive('incomplete')" (click)="onSetFilter('incomplete')">Incomplete</a>
   <a href="#" [ngClass]="isFilterActive('complete')" (click)="onSetFilter('complete')">Completed</a>

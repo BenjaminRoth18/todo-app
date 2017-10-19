@@ -8,10 +8,17 @@ export class TodoService {
   filter = new Subject<Todo[]>();
   filterType: TodoType = null;
 
+  footerState = new Subject<boolean>();
+
   removeItem(todoItem) {
     const element = this.todos.indexOf(todoItem);
     this.todos.splice(element, 1);
     this.setLocalStorage();
+
+    if (this.todos.length >= 0) {
+      this.footerState.next(false);
+    }
+
     this.applyFilter();
   }
 
@@ -19,6 +26,7 @@ export class TodoService {
     this.todos.push(todo);
     this.setLocalStorage();
     this.applyFilter();
+    this.footerState.next(true);
   }
 
   setStatus(newStatus: boolean, item: Todo) {
@@ -30,6 +38,10 @@ export class TodoService {
   setFilter(filterType: TodoType) {
     this.filterType = filterType;
     this.applyFilter();
+
+    if (filterType === 1) {
+      this.footerState.next(true);
+    }
   }
 
   applyFilter() {

@@ -1,3 +1,17 @@
+body {
+  &[class^='active-'] {
+    &:before {
+      background: rgba(0,0,0,0.5);
+      content: '';
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+  }
+}
+
 a {
   transition: color 0.3s ease;
 }
