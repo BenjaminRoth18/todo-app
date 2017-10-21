@@ -16,7 +16,7 @@ Just another todo app I started to develop from scratch. This app supports the f
 
 
 ## Screenshot
-![Angular 4 Todo App](https://raw.githubusercontent.com/BenjaminRoth18/todo-app/master/screenshot.png)
+![Angular 4 Todo App](https://raw.githubusercontent.com/BenjaminRoth18/todo-app/master/src/screenshot.png)
 
 
 ## Setup
