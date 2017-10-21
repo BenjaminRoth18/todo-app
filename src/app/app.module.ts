@@ -12,6 +12,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { ToggleAddDirective } from './directives/toggle-add.directive';
 import { ToggleRemoveDirective } from './directives/toggle-remove.directive';
+import { DetailComponent } from './todos/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ToggleRemoveDirective } from './directives/toggle-remove.directive';
     TodosComponent,
     SidebarComponent,
     ToggleAddDirective,
-    ToggleRemoveDirective
+    ToggleRemoveDirective,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

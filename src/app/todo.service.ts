@@ -16,7 +16,7 @@ export class TodoService {
     const element = this.todos.indexOf(todoItem);
     this.todos.splice(element, 1);
     this.setLocalStorage();
-    this.setTodoDetail(null)
+    this.setTodoDetail(null);
 
     if (this.todos.length >= 0) {
       this.footerState.next(false);

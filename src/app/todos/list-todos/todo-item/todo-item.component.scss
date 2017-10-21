@@ -24,14 +24,16 @@
     }
 
     a {
+      border-right: solid 1px #ddd;
       display: block;
-      margin: 0 3px;
+      margin-right: 10px;
+      padding-right: 10px;
       position: relative;
 
-      &:after {
-        border-right: solid 2px red;
-        content: "";
-        display: inline-block;
+      &:first-of-type {
+        border-right: 0;
+        margin-right: 0;
+        padding-right: 0;
       }
     }
   }
