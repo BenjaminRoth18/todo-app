@@ -8,7 +8,7 @@ Just another todo app I started to develop from scratch. This app supports the f
 
 ### Features
 * Filter states
-* Add / Remove function
+* Add / Remove / Rename function
 * Detail view
 * Counter
 * Navigation
