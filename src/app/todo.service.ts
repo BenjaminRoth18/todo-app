@@ -10,10 +10,13 @@ export class TodoService {
 
   footerState = new Subject<boolean>();
 
+  todoDetail = new Subject<Todo>();
+
   removeItem(todoItem) {
     const element = this.todos.indexOf(todoItem);
     this.todos.splice(element, 1);
     this.setLocalStorage();
+    this.setTodoDetail(null)
 
     if (this.todos.length >= 0) {
       this.footerState.next(false);
@@ -59,5 +62,9 @@ export class TodoService {
 
   setLocalStorage() {
     localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
+
+  setTodoDetail(todo: Todo) {
+    this.todoDetail.next(todo);
   }
 }

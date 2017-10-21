@@ -54,4 +54,8 @@ export class TodoItemComponent implements OnInit {
     this.todoService.changedName(todo, editedTodo);
     this.editTodo = false;
   }
+
+  showDetail(todo) {
+    this.todoService.setTodoDetail(todo);
+  }
 }

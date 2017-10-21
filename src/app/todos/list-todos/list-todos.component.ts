@@ -14,6 +14,7 @@ export class ListTodosComponent implements OnInit {
   todos: Todo[];
   activeFilterClass = '';
   footerState = false;
+  selectedTodo: Todo;
 
   constructor(private todoService: TodoService) {
   }
@@ -36,6 +37,13 @@ export class ListTodosComponent implements OnInit {
       .subscribe(
         (status: boolean) => {
           this.footerState = status;
+        }
+      );
+
+    this.todoService.todoDetail
+      .subscribe(
+        (todo: Todo) => {
+          this.selectedTodo = todo;
         }
       );
   }
